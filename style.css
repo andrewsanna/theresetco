@@ -826,7 +826,7 @@ em { font-style: italic; }
 
 .service-detail {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 0.7fr;
   gap: 80px;
   align-items: center;
   padding: 96px 0;
@@ -892,7 +892,6 @@ em { font-style: italic; }
   justify-content: center;
   flex-direction: column;
   gap: 16px;
-  border: 2px dashed var(--tan-dark);
   position: relative;
   overflow: hidden;
 }
