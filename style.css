@@ -78,6 +78,13 @@ a { text-decoration: none; color: inherit; }
 }
 .section-title.light { color: var(--tan); }
 
+/* Green italic payoff phrase in headings on light backgrounds */
+.section-title em,
+.philosophy-text h2 em,
+.founder-text h2 em,
+.contact-info h2 em { color: var(--green); }
+.section-title.light em { color: inherit; }
+
 /* Mixed-type headline: Jost caps with one Cormorant italic word */
 .mix-title {
   font-family: var(--font-body);
@@ -763,23 +770,42 @@ em { font-style: italic; }
    PAGE HERO (inner pages)
    ============================================ */
 .page-hero {
-  background: var(--tan-light);
-  padding: 196px 32px 80px;
+  position: relative;
+  overflow: hidden;
+  background: var(--green-dark);
+  padding: 196px 32px 88px;
   text-align: center;
-  border-bottom: 1px solid var(--tan-dark);
 }
-.page-hero .section-label { display: block; margin-bottom: 16px; }
+/* Ghosted page name behind the headline, set with data-ghost on the section */
+.page-hero::before {
+  content: attr(data-ghost);
+  position: absolute;
+  left: 50%;
+  bottom: -0.2em;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(7rem, 22vw, 20rem);
+  line-height: 1;
+  white-space: nowrap;
+  color: rgba(237, 227, 213, 0.07);
+  pointer-events: none;
+}
+.page-hero > * { position: relative; z-index: 1; }
+.page-hero .section-label { display: block; margin-bottom: 16px; color: var(--tan-dark); }
 .page-hero h1 {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 400;
-  color: var(--text-dark);
-  margin-bottom: 20px;
   line-height: 1.15;
+  color: var(--tan-light);
+  margin-bottom: 20px;
 }
+.page-hero h1 em { color: var(--tan); }
 .page-hero p {
   font-size: 17px;
-  color: var(--text-mid);
+  color: rgba(237, 227, 213, 0.8);
   max-width: 560px;
   margin: 0 auto;
   line-height: 1.8;
