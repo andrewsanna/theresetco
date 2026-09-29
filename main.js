@@ -50,7 +50,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const target = document.querySelector(anchor.getAttribute('href'));
     if (target) {
       e.preventDefault();
-      const offset = 88;
+      const offset = 120;
       window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
     }
   });
