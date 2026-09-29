@@ -823,9 +823,17 @@ em { font-style: italic; }
 }
 .founder-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.85fr 1.15fr;
   gap: 80px;
-  align-items: center;
+  align-items: start;
+}
+.founder-photo { position: sticky; top: 140px; }
+.founder-photo img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
 }
 .founder-text h2 {
   font-family: var(--font-display);
@@ -1081,6 +1089,7 @@ em { font-style: italic; }
   .process-step { padding: 0; }
   .footer-inner { grid-template-columns: 1fr; gap: 48px; }
   .philosophy-visual { position: static; }
+  .founder-photo { position: static; max-width: 480px; }
   .contact-cta-box { position: static; }
 }
 
